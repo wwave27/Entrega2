@@ -1,0 +1,134 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ .icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.formulario{
+  color:white;
+}
+
+.menuprincipal{
+  padding: 5px;
+  text-align: center;
+}
+.menuprincipal a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.menuprincipal a:hover {
+  background-color: #ddd;
+  color:  FFFFFFFFFF;
+}
+
+.menuprincipal a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.review{
+  background-color: grey;
+}
+
+.card{
+  background-color: teal;
+  padding: 10px;
+}
+
+.card2 {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: tomato;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 2px;
+  padding: 3px;
+}
+
+.centerhorizontal{
+  align-items: center;
+}
+
+
+.contenedor{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.contenedor figure{
+  position: relative;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+  cursor: pointer;
+}
+.contenedor figure img{
+  width: 200%;
+  height: 100%;
+  transition: all 500ms ease-out;
+}
+.contenedor figure .capa{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11,103,123,0.6);
+  transition: all 500ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+}
+.contenedor figure:hover > .capa{
+  opacity: 1;
+  visibility: visible;
+}
+.contenedor figure:hover > .capa h7{
+  margin-top: 70px;
+  margin-bottom: 15px;
+}
+.contenedor figure:hover > img{
+  transform: scale(1.3);
+}
+.contenedor figure .capa h7{
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 120px;
+  transition: all 500ms ease-out;
+  margin-top: 300px;
+}
+.contenedor figure .capa p{
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 220px;
+  margin: auto;
+}
+
+.sombra{
+  text-shadow: 2px 2px 2px black;
+}
+
+.invalid {
+  color: red;
+}
