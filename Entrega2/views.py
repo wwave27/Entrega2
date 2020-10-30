@@ -8,5 +8,3 @@ def mainPage(request):
     doc_externo = get_template("index.html")
     documento = doc_externo.render()
     return HttpResponse(documento)
-    
-    ad: 12
