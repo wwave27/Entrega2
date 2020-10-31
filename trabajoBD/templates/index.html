@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  {% load static %}
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <link rel="icon" href="img/logo principal.png">
+  <link rel="icon" href="{% static 'img/logo principal.png' %}">
   <title>Mundo Gamer - Noticias, Reviews y todo lo que buscas de tus juegos favoritos!</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="C:/Users/Vicho/Desktop/Duoc/Semestre 4/Desarrollo Web y Mobile/Entrega 2/Entrega2/Entrega2/static/polls/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="C:/Users/Vicho/Desktop/Duoc/Semestre 4/Desarrollo Web y Mobile/Entrega 2/Entrega2/Entrega2/static/polls/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
   
 </head>
 <body>
   <nav class="blue-grey darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="img/logo nuevo.png" alt="Logo" height="50" width="150"></a>
+    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
         <li><a herf='#'>PS5</a></li>
         <li><a herf='#'>XBOX</a></li>
@@ -37,16 +41,16 @@
 
   <div class="carousel blue-grey darken-3">
     <h5 class="center white-text">Los Mejores Juegos</h5>
-    <a class="carousel-item" href="#one!"><img src="img/carrusel/carrusel1.JPG"></a>
-    <a class="carousel-item" href="#two!"><img src="img/carrusel/carrusel2.JPG"></a>
-    <a class="carousel-item" href="#three!"><img src="img/carrusel/carrusel3.JPG"></a>
-    <a class="carousel-item" href="#four!"><img src="img/carrusel/carrusel4.JPG"></a>
-    <a class="carousel-item" href="#five!"><img src="img/carrusel/carrusel5.JPG"></a>
-    <a class="carousel-item" href="#six!"><img src="img/carrusel/carrusel6.JPG"></a>
-    <a class="carousel-item" href="#seven!"><img src="img/carrusel/carrusel7.JPG"></a>
-    <a class="carousel-item" href="#eight!"><img src="img/carrusel/carrusel8.JPG"></a>
-    <a class="carousel-item" href="#nine!"><img src="img/carrusel/carrusel9.JPG"></a>
-    <a class="carousel-item" href="#ten!"><img src="img/carrusel/carrusel10.JPG"></a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'img/carrusel/carrusel1.JPG' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'img/carrusel/carrusel2.JPG' %}"></a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'img/carrusel/carrusel3.JPG' %}"></a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'img/carrusel/carrusel4.JPG' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'img/carrusel/carrusel5.JPG' %}"></a>
+    <a class="carousel-item" href="#six!"><img src="{% static 'img/carrusel/carrusel6.JPG' %}"></a>
+    <a class="carousel-item" href="#seven!"><img src="{% static 'img/carrusel/carrusel7.JPG' %}"></a>
+    <a class="carousel-item" href="#eight!"><img src="{% static 'img/carrusel/carrusel8.JPG' %}"></a>
+    <a class="carousel-item" href="#nine!"><img src="{% static 'img/carrusel/carrusel9.JPG' %}"></a>
+    <a class="carousel-item" href="#ten!"><img src="{% static 'img/carrusel/carrusel10.JPG' %}"></a>
   </div>
 
   <div class="grey darken-4">
@@ -60,7 +64,7 @@
             
             <div class="card">
               <div class="card-image">
-                <img src="img/rtx3080.jpg">
+                <img src="{% static 'img/rtx3080.jpg' %}">
                 <span class="card-title sombra">Versiones confirmadas de NVIDIA serie 3000</span>
               </div>
               <div class="card-content">
@@ -77,7 +81,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="img/cyberpunk.PNG">
+                <img src="{% static 'img/cyberpunk.PNG' %}">
                 <span class="card-title sombra">Cyberpunk 2077 revela los requisitos mínimos y recomendados para PC</span>
               </div>
               <div class="card-content">
@@ -99,7 +103,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="img/Tony Hawks.jpg">
+                <img src="{% static 'img/Tony Hawks.jpg' %}">
                 <span class="card-title sombra">Tony Hawk's Pro Skater 1 + 2</span>
               </div>
               <div class="card-content">
@@ -111,7 +115,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="img/Super Mario 3D all Stars.jpg">
+                <img src="{% static 'img/Super Mario 3D all Stars.jpg' %}">
                 <span class="card-title sombra">Super Mario 3D All-Stars</span>
               </div>
               <div class="card-content">
@@ -129,7 +133,7 @@
 
             <div class="card small">
               <div class="card-image">
-                <img src="img/Tony Hawks.jpg">
+                <img src="{% static 'img/Tony Hawks.jpg' %}">
                 <span class="card-title sombra">Tony Hawk's Pro Skater 1 + 2</span>
               </div>
               <div class="card-content">
@@ -144,7 +148,7 @@
 
             <div class="card small">
               <div class="card-image">
-                <img src="img/mfs2020.jpg">
+                <img src="{% static 'img/mfs2020.jpg' %}">
                 <span class="card-title sombra">Microsoft Flight Simulator 2020</span>
               </div>
               <div class="card-content">
@@ -247,9 +251,9 @@
         <div class="col l3 s12">
           <h5 class="white-text">Síguenos en nuestras Redes Sociales:</h5>
           <ul>
-            <div> <a href="https://www.instagram.com/" target="_blank"> <b class="active" href="icono"><img src="img/ig.png" alt="Logo" height="30" width="30"></b> </a> </div>
-            <div> <a href="https://www.facebook.com/" target="_blank"> <b class="active" href="icono"><img src="Img/fb.png" alt="Logo" height="30" width="30"></b> </a> </div>
-            <div> <a href="https://www.twitter.com/" target="_blank"> <b class="active" href="icono"><img src="Img/logo twitter.png" alt="Logo" height="30" width="30"></b> </a> </div>
+            <div> <a href="https://www.instagram.com/" target="_blank"> <b class="active" href="icono"><img src="{% static 'img/ig.png' %}" alt="Logo" height="30" width="30"></b> </a> </div>
+            <div> <a href="https://www.facebook.com/" target="_blank"> <b class="active" href="icono"><img src="{% static 'Img/fb.png' %}" alt="Logo" height="30" width="30"></b> </a> </div>
+            <div> <a href="https://www.twitter.com/" target="_blank"> <b class="active" href="icono"><img src="{% static 'Img/logo twitter.png' %}" alt="Logo" height="30" width="30"></b> </a> </div>
           </ul>
         </div>
       </div>
@@ -259,8 +263,8 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

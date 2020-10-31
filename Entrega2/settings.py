@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Entrega2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/Vicho/Desktop/Duoc/Semestre 4/Desarrollo Web y Mobile/Entrega 2/Entrega2/Entrega2/plantilla'],
+        'DIRS': ['C:/Users/Vicho/Desktop/Duoc/Semestre 4/Desarrollo Web y Mobile/Entrega 2/Entrega2/Entrega2/trabajoBD/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,4 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = ('C:/Users/Vicho/Desktop/Duoc/Semestre 4/Desarrollo Web y Mobile/Entrega 2/Entrega2/Entrega2/static/polls')
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR / 'media'
