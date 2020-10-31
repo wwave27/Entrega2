@@ -2,9 +2,9 @@ from django.db import models
 
 #superuser vgonzalez
 #pass 1234
-# Create your models here.
 #user2 jaraya
 #pass duoc2020
+# Create your models here.
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=50)
