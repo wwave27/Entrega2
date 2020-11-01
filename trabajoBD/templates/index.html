@@ -16,7 +16,7 @@
   
   
 </head>
-<body>
+<body class="grey darken-4">
   <nav class="teal" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
@@ -26,13 +26,8 @@
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
         <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
-        <form method="POST">{% csrf_token %}
-          <p><input type="text" name="username" placeholder="nombre de usuario"</p>
-          <p><input type="password" name="password" placeholder="password"</p>
-          <p><input type="submit" value="Ingresar"></p>
-        </form>
       </ul>
-
+      
       <ul id="nav-mobile" class="sidenav">
         <li><a href="{% url 'ps5' %}">PS5</a></li>
         <li><a href="{% url 'xbox' %}">XBOX</a></li>
@@ -44,6 +39,22 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+  
+   <!-- LOGIN  -->
+  <div class="row card col s4 m4 l4">
+    <form method="POST">{% csrf_token %}
+      <div class="input-field col s4 l2">
+        <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
+      </div>
+      <div class="input-field col s4 l2">
+        <input placeholder="Contraseña" id="password" type="password" class="validate white-text">
+      </div>
+      <div class="input-field col s4 l2">
+        <input class="btn-small" type="submit" value="Ingresar">
+      </div>
+    </form>
+    
+  </div>
 
   <div class="carousel blue-grey darken-3">
     <h5 class="center white-text">Los Mejores Juegos</h5>
@@ -183,8 +194,12 @@
           <a href="{% url 'registrarse' %}" id="registrarse" class="hide-on-small-only btn-large waves-effect waves-light light-blue">Subscribirse</a>
         </div>
         <br><br>
+        <br><br>
+        <br><br>
         <div class="col s12 m4 l6 grey darken-4 center">
           <label for=""><h5>Destacados de la Semana</h5></label>
+          <br><br>
+          <br><br>
           
           <iframe class="card2" width="560" height="315" src="https://www.youtube.com/embed/0tUqIHwHDEc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <iframe class="card2" width="560" height="315" src="https://www.youtube.com/embed/RkC0l4iekYo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
