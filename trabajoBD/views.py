@@ -13,3 +13,12 @@ def ps5news(request):
 
 def switchnews(request):    
     return render(request, "switch.html")
+
+def pcnews(request):    
+    return render(request, "pc.html")
+
+def retronews(request):    
+    return render(request, "retro.html")
+
+def xboxnews(request):    
+    return render(request, "xbox.html")
