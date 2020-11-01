@@ -126,9 +126,14 @@
 }
 
 .sombra{
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px red;
 }
 
 .invalid {
   color: red;
+}
+
+.topbar{
+  background-color: red;
+  position: sticky;
 }

@@ -49,6 +49,11 @@
   padding: 10px;
 }
 
+.card3{
+  background-color: teal;
+  position: sticky;
+}
+
 .bgcolor{
   background-color:#546e7a;
 }
@@ -131,9 +136,13 @@
 }
 
 .sombra{
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 3px 3px 3px black;
 }
 
 .invalid {
   color: red;
+}
+
+.inputWidth{
+  width: 20px;
 }
