@@ -25,6 +25,12 @@
         <li><a href="{% url 'switch' %}">SWITCH</a></li>
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
+        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
+        <form method="POST">{% csrf_token %}
+          <p><input type="text" name="username" placeholder="nombre de usuario"</p>
+          <p><input type="password" name="password" placeholder="password"</p>
+          <p><input type="submit" value="Ingresar"></p>
+        </form>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -33,7 +39,7 @@
         <li><a href="{% url 'switch' %}">SWITCH</a></li>
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
-          
+        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>       
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -170,14 +176,18 @@
     <br><br>
   </div>
   <div class="grey darken-4 section no-pad-bot" id="">
-    <div class="container">
+    <div class="container center">
       <br><br>
       <h4 class="header center blue-text">Registrate a Mundo Gamers!</h4>
+        <br><br>
           <a href="{% url 'registrarse' %}" id="registrarse" class="hide-on-small-only btn-large waves-effect waves-light light-blue">Subscribirse</a>
         </div>
-        <div class="col s12 m4 l6 grey darken-4">
+        <br><br>
+        <div class="col s12 m4 l6 grey darken-4 center">
           <label for=""><h5>Destacados de la Semana</h5></label>
-          <iframe class="card2" width="460" height="250" src="https://www.youtube.com/embed/F-tZPBpcock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+          <iframe class="card2" width="560" height="315" src="https://www.youtube.com/embed/0tUqIHwHDEc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="card2" width="560" height="315" src="https://www.youtube.com/embed/RkC0l4iekYo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
       <br><br>
       </div>
