@@ -20,11 +20,12 @@
   <nav class="blue-grey darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a herf='#'>PS5</a></li>
-        <li><a herf='#'>XBOX</a></li>
-        <li><a herf='#'>SWITCH</a></li>
-        <li><a herf='#'>PC</a></li>
-        <li><a herf='#'>RETRO</a></li>
+        <li><a href="{% url 'ps5' %}">PS5</a></li>
+        <li><a href="{% url 'xbox' %}">XBOX</a></li>
+        <li><a href="{% url 'switch' %}">SWITCH</a></li>
+        <li><a href="{% url 'pc' %}">PC</a></li>
+        <li><a href="{% url 'retro' %}">RETRO</a></li>
+        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
