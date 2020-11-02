@@ -10,11 +10,15 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     direccion = models.CharField(max_length=50)
-    edad = models.IntegerField()
+    fecnac = models.DateField()
     email = models.EmailField()
-
-    def __str__(self):
-        return 'nombre :%s, apellido :%s, direccion :%s, edad :%s' % (self.nombre, self.apellido, self.direccion, self.edad)
+    user = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    playstation = models.BooleanField()
+    xbox = models.BooleanField()
+    nintendo = models.BooleanField()
+    pc = models.BooleanField()
+    retro = models.BooleanField()
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=50)
