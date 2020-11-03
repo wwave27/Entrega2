@@ -18,7 +18,7 @@
 </head>
 
 <body class="grey darken-4">
-  <nav class="teal topbar" role="navigation">
+  <nav class="teal topbar pushpin-demo-nav" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{% url 'ps5' %}">PS5</a></li>
@@ -110,9 +110,32 @@
               <div class="card-content">
                 <p>{{Noticia.subtitulo}}</p>
               </div>
+              <!-- chips  -->
+              {% if Noticia.nintendo %}
+              <div class="chip red" id="chipSwitch">
+                Nintendo Switch
+              </div>
+              {% endif %}
+              {% if Noticia.playstation %}
+              <div class="chip blue" id="chipPlaystation">
+                Playstation
+              </div>
+              {% endif %}
+              {% if Noticia.pc %}
+              <div class="chip orange" id="chipPc">
+                PC
+              </div>
+              {% endif %}
+              {% if Noticia.xbox %}
+              <div class="chip green" id="chipXbox">
+                Xbox
+              </div>
+              {% endif %}
+
               <div class="card-action">
                 <a href="#">Leer Noticia</a>
               </div>
+
             </div>
             {% endfor %}
             
@@ -133,6 +156,27 @@
               <div class="card-content">
                 <p>{{Lanzamientos.subtitulo}}</p>
               </div>
+              <!-- chips  -->
+              {% if Lanzamientos.nintendo %}
+              <div class="chip red" id="chipSwitch">
+                Nintendo Switch
+              </div>
+              {% endif %}
+              {% if Lanzamientos.playstation %}
+              <div class="chip blue" id="chipPlaystation">
+                Playstation
+              </div>
+              {% endif %}
+              {% if Lanzamientos.pc %}
+              <div class="chip orange" id="chipPc">
+                PC
+              </div>
+              {% endif %}
+              {% if Lanzamientos.xbox %}
+              <div class="chip green" id="chipXbox">
+                Xbox
+              </div>
+              {% endif %}
             </div>
             {% endfor %}
           </div>
@@ -152,6 +196,7 @@
               <div class="card-content">
                 <p>{{Reviews.subtitulo}}</p>
               </div>
+              
               <div class="card-action">
                 <a href="#">Leer Review</a>
               </div>

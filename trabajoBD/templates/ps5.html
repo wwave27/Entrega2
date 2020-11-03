@@ -98,6 +98,27 @@
                   <div class="card-content">
                     <p>{{Noticia.subtitulo}}</p>
                   </div>
+                  <!-- chips  -->
+              {% if Noticia.nintendo %}
+              <div class="chip red" id="chipSwitch">
+                Nintendo Switch
+              </div>
+              {% endif %}
+              {% if Noticia.playstation %}
+              <div class="chip blue" id="chipPlaystation">
+                Playstation
+              </div>
+              {% endif %}
+              {% if Noticia.pc %}
+              <div class="chip orange" id="chipPc">
+                PC
+              </div>
+              {% endif %}
+              {% if Noticia.xbox %}
+              <div class="chip green" id="chipXbox">
+                Xbox
+              </div>
+              {% endif %}
                   <div class="card-action">
                     <a href="#">Leer Noticia</a>
                   </div>
@@ -123,8 +144,29 @@
                   <div class="card-content">
                     <p>{{Lanzamientos.subtitulo}}</p>
                   </div>
-                </div>
-              {% endif %}
+                  <!-- chips  -->
+                  {% if Lanzamientos.nintendo %}
+                  <div class="chip red" id="chipSwitch">
+                    Nintendo Switch
+                  </div>
+                  {% endif %}
+                  {% if Lanzamientos.playstation %}
+                  <div class="chip blue" id="chipPlaystation">
+                    Playstation
+                  </div>
+                  {% endif %}
+                  {% if Lanzamientos.pc %}
+                  <div class="chip orange" id="chipPc">
+                    PC
+                  </div>
+                  {% endif %}
+                  {% if Lanzamientos.xbox %}
+                  <div class="chip green" id="chipXbox">
+                    Xbox
+                  </div>
+                  {% endif %}
+                    </div>
+                  {% endif %}
             {% endfor %}
           </div>
         </div>
