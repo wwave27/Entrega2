@@ -181,7 +181,7 @@
 
             {% for Reviews in reviewsCards reversed %}
               {% if Reviews.xbox == True %}
-                <div class="card small">
+                <div class="card">
                   <div class="card-image">
                     <img src={{ Reviews.imagen.url }}>
                     <span class="card-title sombra">{{Reviews.titulo}}</span>
@@ -189,6 +189,27 @@
                   <div class="card-content">
                     <p>{{Reviews.subtitulo}}</p>
                   </div>
+                  <!-- chips  -->
+                  {% if Reviews.nintendo %}
+                  <div class="chip red" id="chipSwitch">
+                    Nintendo Switch
+                  </div>
+                  {% endif %}
+                  {% if Reviews.playstation %}
+                  <div class="chip blue" id="chipPlaystation">
+                    Playstation
+                  </div>
+                  {% endif %}
+                  {% if Reviews.pc %}
+                  <div class="chip orange" id="chipPc">
+                    PC
+                  </div>
+                  {% endif %}
+                  {% if Reviews.xbox %}
+                  <div class="chip green" id="chipXbox">
+                    Xbox
+                  </div>
+                  {% endif %}
                   <div class="card-action">
                     <a href="#">Leer Review</a>
                   </div>
