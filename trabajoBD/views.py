@@ -15,16 +15,42 @@ def register(request):
     return render(request, "register.html")
 
 def ps5news(request):
-    return render(request, "ps5.html")
+
+    noticiasCards = Noticia.objects.all()
+    reviewsCards = Reviews.objects.all()
+    lanzamientosCards = Lanzamientos.objects.all()
+
+    return render(request, "ps5.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
 
 def switchnews(request):    
-    return render(request, "switch.html")
 
-def pcnews(request):    
-    return render(request, "pc.html")
+    noticiasCards = Noticia.objects.all()
+    reviewsCards = Reviews.objects.all()
+    lanzamientosCards = Lanzamientos.objects.all()
 
-def retronews(request):    
-    return render(request, "retro.html")
+    return render(request, "switch.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
 
-def xboxnews(request):    
-    return render(request, "xbox.html")
+def pcnews(request):  
+
+    noticiasCards = Noticia.objects.all()
+    reviewsCards = Reviews.objects.all()
+    lanzamientosCards = Lanzamientos.objects.all()
+
+    return render(request, "pc.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
+
+def retronews(request):
+
+    noticiasCards = Noticia.objects.all()
+    reviewsCards = Reviews.objects.all()
+    lanzamientosCards = Lanzamientos.objects.all()
+
+
+    return render(request, "retro.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
+
+def xboxnews(request):  
+
+    noticiasCards = Noticia.objects.all()
+    reviewsCards = Reviews.objects.all()
+    lanzamientosCards = Lanzamientos.objects.all()
+  
+    return render(request, "xbox.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})

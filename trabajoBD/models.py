@@ -20,6 +20,9 @@ class Usuario(models.Model):
     pc = models.BooleanField()
     retro = models.BooleanField()
 
+    def __str__(self):
+        return '%s %s' % (self.nombre, self.apellido)
+
 class Noticia(models.Model):
     titulo = models.CharField(max_length=100)
     subtitulo = models.CharField(max_length=500)
@@ -31,6 +34,9 @@ class Noticia(models.Model):
     nintendo = models.BooleanField()
     pc = models.BooleanField()
     retro = models.BooleanField()
+
+    def __str__(self):
+        return self.titulo
 
 class Lanzamientos(models.Model):
     titulo = models.CharField(max_length=50)
@@ -44,12 +50,23 @@ class Lanzamientos(models.Model):
     pc = models.BooleanField()
     retro = models.BooleanField()
 
+    def __str__(self):
+        return self.titulo
+
 class Reviews(models.Model):
     titulo = models.CharField(max_length=50)
     subtitulo = models.CharField(max_length=100)
     imagen = models.ImageField(null = True, blank=True)
     created = models.DateTimeField(auto_now_add=True, null = True)
     update = models.DateTimeField(auto_now_add=True, null = True)
+    playstation = models.BooleanField()
+    xbox = models.BooleanField()
+    nintendo = models.BooleanField()
+    pc = models.BooleanField()
+    retro = models.BooleanField()
+
+    def __str__(self):
+        return self.titulo
 
 
 class Tags(models.Model):
