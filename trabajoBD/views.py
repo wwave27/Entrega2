@@ -1,9 +1,15 @@
 from django.shortcuts import render
+from trabajoBD.models import Noticia, Reviews, Lanzamientos
 
 # Create your views here.
 
 def home(request):
-    return render(request,"index.html")
+
+    noticiasCards = Noticia.objects.all()
+    reviewsCards = Reviews.objects.all()
+    lanzamientosCards = Lanzamientos.objects.all()
+
+    return render(request,"index.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
 
 def register(request):
     return render(request, "register.html")

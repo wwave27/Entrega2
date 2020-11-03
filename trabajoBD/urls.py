@@ -15,5 +15,5 @@ urlpatterns = [
     path('pc/', views.pcnews, name="pc"),
     path('retro/', views.retronews, name="retro"),
     path('xbox/', views.xboxnews, name="xbox"),
-    path('index/',LoginView.as_view(template_name='index.html'),name="login")
+    path('index/',LoginView.as_view(template_name='index.html'),name="login"),
 ]
