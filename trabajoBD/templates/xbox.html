@@ -16,8 +16,8 @@
   
   
 </head>
-<body>
-  <nav class="green darken-4" role="navigation">
+<body class="grey darken-4">
+  <nav class="light-green" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{% url 'ps5' %}">PS5</a></li>
@@ -39,6 +39,31 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+
+  <div class="topbar row card3 col s4 m4 l4 center">
+    <form method="POST">{% csrf_token %}
+      <div class="input-field col s4 m2 l2">
+        <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
+      </div>
+      <div class="input-field col s4 m2 l2">
+        <input placeholder="Contraseña" id="password" type="password" class="validate white-text">
+      </div>
+      <div class="input-field col s4 l1">
+        <input class="btn-small" type="submit" value="Ingresar">
+      </div>
+
+      <!-- barra buscar  -->
+      <div class="">
+        <div class="input-field col s6 m2 l1 right">
+          <input class="btn-small" type="submit" value="Buscar">
+        </div>
+        <div class="input-field col s6 m2 l2 right">
+          <input placeholder="Buscar" id="buscar" type="text" class="validate white-text">
+        </div>
+
+      </div>
+    </form>
+  </div>
 
   <div class="carousel blue-grey darken-3">
     <h5 class="center white-text">Los Mejores Juegos</h5>

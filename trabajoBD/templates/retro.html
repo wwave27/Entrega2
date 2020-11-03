@@ -16,8 +16,8 @@
   
   
 </head>
-<body>
-  <nav class="grey darken-3" role="navigation">
+<body class="grey darken-4">
+  <nav class="brown lighten-3" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{% url 'ps5' %}">PS5</a></li>
@@ -39,6 +39,31 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+
+  <div class="topbar row card3 col s4 m4 l4 center">
+    <form method="POST">{% csrf_token %}
+      <div class="input-field col s4 m2 l2">
+        <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
+      </div>
+      <div class="input-field col s4 m2 l2">
+        <input placeholder="Contraseña" id="password" type="password" class="validate white-text">
+      </div>
+      <div class="input-field col s4 l1">
+        <input class="btn-small" type="submit" value="Ingresar">
+      </div>
+
+      <!-- barra buscar  -->
+      <div class="">
+        <div class="input-field col s6 m2 l1 right">
+          <input class="btn-small" type="submit" value="Buscar">
+        </div>
+        <div class="input-field col s6 m2 l2 right">
+          <input placeholder="Buscar" id="buscar" type="text" class="validate white-text">
+        </div>
+
+      </div>
+    </form>
+  </div>
 
   <div class="carousel blue-grey darken-3">
     <h5 class="center white-text">Los Mejores Juegos</h5>
@@ -64,18 +89,20 @@
             <h5 class="center">Noticias</h5>
             
             {% for Noticia in noticiasCards reversed %}
-            <div class="card">
-              <div class="card-image">
-                <img src={{ Noticia.imagen.url }}>
-                <span class="card-title sombra">{{Noticia.titulo}}</span>
+              {% if Noticia.retro == True %}
+              <div class="card">
+                <div class="card-image">
+                  <img src={{ Noticia.imagen.url }}>
+                  <span class="card-title sombra">{{Noticia.titulo}}</span>
+                </div>
+                <div class="card-content">
+                  <p>{{Noticia.subtitulo}}</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Leer Noticia</a>
+                </div>
               </div>
-              <div class="card-content">
-                <p>{{Noticia.subtitulo}}</p>
-              </div>
-              <div class="card-action">
-                <a href="#">Leer Noticia</a>
-              </div>
-            </div>
+              {% endif %}
             {% endfor %}
             
           </div>
@@ -130,19 +157,6 @@
     </div>
     <br><br>
   </div>
-  <div class="grey darken-4 section no-pad-bot" id="">
-    <div class="container">
-      <br><br>
-      <h4 class="header center blue-text">Registrate a Mundo Gamers!</h4>
-          <a href="#" id="registrarse" class="hide-on-small-only btn-large waves-effect waves-light light-blue">Subscribirse</a>
-        </div>
-        <div class="col s12 m4 l6 grey darken-4">
-          <label for=""><h5>Destacados de la Semana</h5></label>
-          <iframe class="card2" width="460" height="250" src="https://www.youtube.com/embed/F-tZPBpcock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-      <br><br>
-      </div>
-    </div>
 
   <footer class="grey darken-4">
     <div class="container">
