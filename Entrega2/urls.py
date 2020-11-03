@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from Entrega2.views import mainPage
 from Entrega2.views import buscarUsuario
+from django.urls import reverse, reverse_lazy
+from django.conf import settings
  
 urlpatterns = [
     path('admin/', admin.site.urls),

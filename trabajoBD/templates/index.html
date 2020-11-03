@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <link rel="icon" href="{% static 'img/logo principal.png' %}">
-  <title>Mundo Gamer - Noticias, Reviews y todo lo que buscas de tus juegos favoritos!</title>
+  <title>Mundo Gamer {{ user.username }} - Noticias, Reviews y todo lo que buscas de tus juegos favoritos!</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -227,7 +227,7 @@
         <div class="col l6 s12">
           <p class="grey-text text-lighten-4">© 2020 Grupo Joaquin Araya / Vicente González</p>
           <p class="grey-text text-lighten-4">Todos los derechos reservados</p>
-          <img src="img/logo principal.png" alt="Logo" height="80" width="80">
+          <img src="{% static 'img/logo principal.png' %}" alt="Logo" height="80" width="80">
 
 
         </div>
