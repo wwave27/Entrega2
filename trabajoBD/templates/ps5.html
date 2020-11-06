@@ -16,7 +16,7 @@
   
   
 </head>
-<body>
+<body class="grey darken-4">
   <nav class="blue-grey lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
@@ -40,6 +40,31 @@
     </div>
   </nav>
 
+  <div class="topbar row card3 col s4 m4 l4 center">
+    <form method="POST">{% csrf_token %}
+      <div class="input-field col s4 m2 l2">
+        <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
+      </div>
+      <div class="input-field col s4 m2 l2">
+        <input placeholder="Contraseña" id="password" type="password" class="validate white-text">
+      </div>
+      <div class="input-field col s4 l1">
+        <input class="btn-small" type="submit" value="Ingresar">
+      </div>
+
+      <!-- barra buscar  -->
+      <div class="">
+        <div class="input-field col s6 m2 l1 right">
+          <input class="btn-small" type="submit" value="Buscar">
+        </div>
+        <div class="input-field col s6 m2 l2 right">
+          <input placeholder="Buscar" id="buscar" type="text" class="validate white-text">
+        </div>
+
+      </div>
+    </form>
+  </div>
+  
   <div class="carousel blue-grey darken-3">
     <h5 class="center white-text">Los Mejores Juegos</h5>
     <a class="carousel-item" href="#one!"><img src="{% static 'img/carrusel/carrusel1.JPG' %}"></a>
@@ -63,36 +88,43 @@
             <h2 class="center light-blue-text"><i class="material-icons">public</i></h2>
             <h5 class="center">Noticias</h5>
             
-            <div class="card">
-              <div class="card-image">
-                <img src="{% static 'img/rtx3080.jpg' %}">
-                <span class="card-title sombra">Versiones confirmadas de NVIDIA serie 3000</span>
+            {% for Noticia in noticiasCards reversed %}
+              {% if Noticia.playstation == True %}
+                <div class="card">
+                  <div class="card-image">
+                    <img src={{ Noticia.imagen.url }}>
+                    <span class="card-title sombra">{{Noticia.titulo}}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>{{Noticia.subtitulo}}</p>
+                  </div>
+                  <!-- chips  -->
+              {% if Noticia.nintendo %}
+              <div class="chip red" id="chipSwitch">
+                Nintendo Switch
               </div>
-              <div class="card-content">
-                <p>Hay mucho revuelo con ciertas características de las RTX 3000 de NVIDIA. 
-                  Si nos seguís a diario sabréis que hemos estado hablando de distintas versiones 
-                  de PCB para una misma tarjeta, algo que a muchos no les termina de quedar claro, 
-                  sobre todo a aquellos que quieren pasar por agua su flamante nueva GPU. 
-                  ¿Cuántas versiones habrá al final y en qué se diferencian estos PCB para RTX 3000?</p>
+              {% endif %}
+              {% if Noticia.playstation %}
+              <div class="chip blue" id="chipPlaystation">
+                Playstation
               </div>
-              <div class="card-action">
-                <a href="#">Leer Noticia</a>
+              {% endif %}
+              {% if Noticia.pc %}
+              <div class="chip orange" id="chipPc">
+                PC
               </div>
-            </div>
-
-            <div class="card">
-              <div class="card-image">
-                <img src="{% static 'img/cyberpunk.PNG' %}">
-                <span class="card-title sombra">Cyberpunk 2077 revela los requisitos mínimos y recomendados para PC</span>
+              {% endif %}
+              {% if Noticia.xbox %}
+              <div class="chip green" id="chipXbox">
+                Xbox
               </div>
-              <div class="card-content">
-                <p>Aprovechando el último Night City Wire, CD Projekt Red ha revelado las especificaciones 
-                  para la versión de compatibles.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">Leer Noticia</a>
-              </div>
-            </div>
+              {% endif %}
+                  <div class="card-action">
+                    <a href="#">Leer Noticia</a>
+                  </div>
+                </div>
+                {% endif %}
+            {% endfor %}
             
           </div>
         </div>
@@ -102,28 +134,40 @@
             <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center">Lanzamientos</h5>
 
-            <div class="card">
-              <div class="card-image">
-                <img src="{% static 'img/Tony Hawks.jpg' %}">
-                <span class="card-title sombra">Tony Hawk's Pro Skater 1 + 2</span>
-              </div>
-              <div class="card-content">
-                <p>Lanzamiento en PS4: 4/9/2020 
-                  Lanzamiento en Xbox One: 4/9/2020 
-                  Lanzamiento en PC: 4/9/2020</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-image">
-                <img src="{% static 'img/Super Mario 3D all Stars.jpg' %}">
-                <span class="card-title sombra">Super Mario 3D All-Stars</span>
-              </div>
-              <div class="card-content">
-                <p>Lanzamiento en Switch: 18/8/2020</p>
-              </div>
-            </div>
-            
+            {% for Lanzamientos in lanzamientosCards reversed %}
+              {% if Lanzamientos.playstation == True %}
+                <div class="card">
+                  <div class="card-image">
+                    <img src={{ Lanzamientos.imagen.url }}>
+                    <span class="card-title sombra">{{Lanzamientos.titulo}}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>{{Lanzamientos.subtitulo}}</p>
+                  </div>
+                  <!-- chips  -->
+                  {% if Lanzamientos.nintendo %}
+                  <div class="chip red" id="chipSwitch">
+                    Nintendo Switch
+                  </div>
+                  {% endif %}
+                  {% if Lanzamientos.playstation %}
+                  <div class="chip blue" id="chipPlaystation">
+                    Playstation
+                  </div>
+                  {% endif %}
+                  {% if Lanzamientos.pc %}
+                  <div class="chip orange" id="chipPc">
+                    PC
+                  </div>
+                  {% endif %}
+                  {% if Lanzamientos.xbox %}
+                  <div class="chip green" id="chipXbox">
+                    Xbox
+                  </div>
+                  {% endif %}
+                    </div>
+                  {% endif %}
+            {% endfor %}
           </div>
         </div>
 
@@ -132,37 +176,43 @@
             <h2 class="center light-blue-text"><i class="material-icons">star</i></h2>
             <h5 class="center">Reviews</h5>
 
-            <div class="card small">
-              <div class="card-image">
-                <img src="{% static 'img/Tony Hawks.jpg' %}">
-                <span class="card-title sombra">Tony Hawk's Pro Skater 1 + 2</span>
-              </div>
-              <div class="card-content">
-                <p>89% Metacritic
-                  86% PC Gamer
-                  9/10 IGN.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">Leer Review</a>
-              </div>
-            </div>
-
-            <div class="card small">
-              <div class="card-image">
-                <img src="{% static 'img/mfs2020.jpg' %}">
-                <span class="card-title sombra">Microsoft Flight Simulator 2020</span>
-              </div>
-              <div class="card-content">
-                <p>92% Metacritic
-                  7/10 Steam
-                  89% PC Gamer</p>
-              </div>
-              <div class="card-action">
-                <a href="#">Leer Review</a>
-              </div>
-            </div>
-
-            
+            {% for Reviews in reviewsCards reversed %}
+              {% if Reviews.playstation == True %}
+                <div class="card">
+                  <div class="card-image">
+                    <img src={{ Reviews.imagen.url }}>
+                    <span class="card-title sombra">{{Reviews.titulo}}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>{{Reviews.subtitulo}}</p>
+                  </div>
+                  <!-- chips  -->
+                  {% if Reviews.nintendo %}
+                  <div class="chip red" id="chipSwitch">
+                    Nintendo Switch
+                  </div>
+                  {% endif %}
+                  {% if Reviews.playstation %}
+                  <div class="chip blue" id="chipPlaystation">
+                    Playstation
+                  </div>
+                  {% endif %}
+                  {% if Reviews.pc %}
+                  <div class="chip orange" id="chipPc">
+                    PC
+                  </div>
+                  {% endif %}
+                  {% if Reviews.xbox %}
+                  <div class="chip green" id="chipXbox">
+                    Xbox
+                  </div>
+                  {% endif %}
+                  <div class="card-action">
+                    <a href="#">Leer Review</a>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
       </div>
