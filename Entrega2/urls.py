@@ -21,10 +21,16 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.urls import reverse, reverse_lazy
 from django.conf import settings
+from django.contrib.auth.views import LoginView,logout_then_login
  
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('MundoGamer/', include('trabajoBD.urls')),
+    path('index/',LoginView.as_view(template_name='login.html'),name="login"),
+    path('accounts/login/',LoginView.as_view(template_name='index.html'),name="index"),
+    path('logout/',logout_then_login,name="logout"),
+    path('accounts/profile/',LoginView.as_view(template_name='index.html'),name="index"),
 ]
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

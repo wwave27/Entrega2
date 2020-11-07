@@ -27,6 +27,7 @@
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
         <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
+        <li><a href="{% url 'login' %}">ENTRAR</a></li>
       </ul>
       
       <ul id="nav-mobile" class="sidenav">
@@ -35,34 +36,26 @@
         <li><a href="{% url 'switch' %}">SWITCH</a></li>
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
-        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>       
+        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
+        <li><a href="{% url 'login' %}">ENTRAR</a></li>       
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   
-   <!-- LOGIN  -->
+
+  
   <div class="topbar row card3 col s4 m4 l4 center">
     <form method="POST">{% csrf_token %}
-      <div class="input-field col s4 m2 l2">
-        <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
-      </div>
-      <div class="input-field col s4 m2 l2">
-        <input placeholder="Contraseña" id="password" type="password" class="validate white-text">
-      </div>
-      <div class="input-field col s4 l1">
-        <input class="btn-small" type="submit" value="Ingresar">
-      </div>
-
-      <!-- barra buscar  -->
       <div class="">
-        <div class="input-field col s6 m2 l1 right">
-          <input class="btn-small" type="submit" value="Buscar">
-        </div>
-        <div class="input-field col s6 m2 l2 right">
-          <input placeholder="Buscar" id="buscar" type="text" class="validate white-text">
-        </div>
-
+        <form method="get">
+          <div class="input-field col s6 m2 l1 right">
+            <input class="btn-small" type="submit" value="Buscar">
+          </div>
+          <div class="input-field col s6 m2 l2 right">
+            <input placeholder="Buscar" id="buscar" type="text" class="validate white-text" name="buscar">
+          </div>
+        </form>
       </div>
     </form>
   </div>
@@ -248,6 +241,9 @@
           <p class="grey-text text-lighten-4">© 2020 Grupo Joaquin Araya / Vicente González</p>
           <p class="grey-text text-lighten-4">Todos los derechos reservados</p>
           <img src="{% static 'img/logo principal.png' %}" alt="Logo" height="80" width="80">
+          <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+          
+
 
 
         </div>

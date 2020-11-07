@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <link rel="icon" href="{% static 'img/logo principal.png' %}">
-  <title>Mundo Gamer - Noticias, Reviews y todo lo que buscas de tus juegos favoritos!</title>
+  <title>Mundo Gamer {{ user.username }} - Noticias, Reviews y todo lo que buscas de tus juegos favoritos!</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -35,71 +35,29 @@
         <li><a href="{% url 'switch' %}">SWITCH</a></li>
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
-        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
+        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li> 
         <li><a href="{% url 'login' %}">ENTRAR</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
-  <div class="grey darken-4 section no-pad-bot" id="">
-    <div class="container">
-      <br><br>
-      <h4 class="header center blue-text">Registrate a Mundo Gamers!</h4>
-      <div class="row">
-        <div class="col s12 m4 grey darken-4">
-          <input class="formulario validate" id="email" type="text" name="" placeholder="Correo">
-          <input class="formulario validate" id="name" type="text" name="" placeholder="Nombre">
-          <input class="formulario validate" id="user" type="text" name="" placeholder="Nombre de Usuario">
-          <input class="formulario validate" id="password" type="password" placeholder="Ingresa tu contraseña">
-          <label id="lblPasswordConfirm" for="passwordConfirm" data-error="Contraseña no coincide" data-success="Contraseña coincide">Password</label>
-          <input class="formulario" id="passwordConfirm" type="password" placeholder="Ingresa nuevamente tu contraseña">
-          <br><br>
-          <label for="fecnac">Fecha de Nacimiento</label >
-          <input class="formulario validate" type="date" name="fecnac" placeholder="">
-          <a href="#" id="registrarse" class="hide-on-small-only btn-large waves-effect waves-light light-blue">Subscribirse</a>
+
+
+<div class="topbar row card3 col s4 m4 l4 center">
+    <form method="POST">{% csrf_token %}
+        <div class="input-field col s4 m2 l2">
+            <p><input placeholder="Usuario" <input type="text" name="username"></p>
         </div>
-        <div class="col s12 m2 l2 grey darken-4">
-          <label for="">Selecciona tus intereses</label>
-          <br><br>
-          <label>
-            <input  id="cboxps" type="checkbox" onclick="checkboxCheck()"/>
-            <span>Playstation</span>
-          </label>
-          <br><br>
-          <label>
-            <input id="cboxxbox" type="checkbox" onclick="checkboxCheck()"/>
-            <span>Xbox</span>
-          </label>
-          <br><br>
-          <label>
-            <input id="cboxnin" type="checkbox" onclick="checkboxCheck()"/>
-            <span>Nintendo</span>
-          </label>
-          <br><br>
-          <label>
-            <input id="cboxpc" type="checkbox" onclick="checkboxCheck()"/>
-            <span>PC</span>
-          </label>
-          <br><br>
-          <label>
-            <input id="cboxold" type="checkbox" onclick="checkboxCheck()"/>
-            <span>Retro</span>
-          </label>
-          
-          <br><br>
-          <label class="invalid" id="checkboxLabel" style="display:block">Debes seleccionar al menos un interés</label>
-          <br><br>
-          <a href="#" id="registrarse" class="hide-on-med-and-up btn-large waves-effect waves-light light-blue">Subscribirse</a>
-          
+        <div class="input-field col s4 m2 l2">
+            <p> <input placeholder="Password"  <input type="password" name="password"></p>
         </div>
-        <div class="col s12 m4 grey darken-4">
-          <label for=""><h5>Destacados de la Semana</h5></label>
-          <iframe class="card2" width="460" height="250" src="https://www.youtube.com/embed/F-tZPBpcock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-      <br><br>
-      </div>
-    </div>
+        <div class="input-field col s4 l1">
+            <p><a button class="btn-small" ><input type="submit" href="{% url 'index' %}"></a></p>
+        </div>
+    </form>
+</div>
+
 
   <footer class="grey darken-4">
     <div class="container">
@@ -140,5 +98,5 @@
   <script src="{% static 'js/materialize.js' %}"></script>
   <script src="{% static 'js/init.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
-  </body>
+</body>
 </html>

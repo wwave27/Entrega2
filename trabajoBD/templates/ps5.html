@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <link rel="icon" href="{% static 'img/logo principal.png' %}">
-  <title>Mundo Gamer - Noticias, Reviews y todo lo que buscas de tus juegos favoritos!</title>
+  <title>Mundo Gamer {{ user.username }} - Noticias, Reviews y todo lo que buscas de tus juegos favoritos!</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,6 +26,7 @@
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
         <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
+        <li><a href="{% url 'login' %}">ENTRAR</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -35,6 +36,7 @@
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
         <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li> 
+        <li><a href="{% url 'login' %}">ENTRAR</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -42,17 +44,6 @@
 
   <div class="topbar row card3 col s4 m4 l4 center">
     <form method="POST">{% csrf_token %}
-      <div class="input-field col s4 m2 l2">
-        <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
-      </div>
-      <div class="input-field col s4 m2 l2">
-        <input placeholder="Contraseña" id="password" type="password" class="validate white-text">
-      </div>
-      <div class="input-field col s4 l1">
-        <input class="btn-small" type="submit" value="Ingresar">
-      </div>
-
-      <!-- barra buscar  -->
       <div class="">
         <div class="input-field col s6 m2 l1 right">
           <input class="btn-small" type="submit" value="Buscar">
@@ -60,7 +51,6 @@
         <div class="input-field col s6 m2 l2 right">
           <input placeholder="Buscar" id="buscar" type="text" class="validate white-text">
         </div>
-
       </div>
     </form>
   </div>
@@ -226,7 +216,7 @@
         <div class="col l6 s12">
           <p class="grey-text text-lighten-4">© 2020 Grupo Joaquin Araya / Vicente González</p>
           <p class="grey-text text-lighten-4">Todos los derechos reservados</p>
-          <img src="img/logo principal.png" alt="Logo" height="80" width="80">
+          <img src="{% static 'img/logo principal.png' %}" alt="Logo" height="80" width="80">
 
 
         </div>

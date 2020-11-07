@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from trabajoBD.models import Noticia, Reviews, Lanzamientos
+from django.shortcuts import get_object_or_404
+from django.db.models import Q
 
 # Create your views here.
 
@@ -54,3 +56,4 @@ def xboxnews(request):
     lanzamientosCards = Lanzamientos.objects.all()
   
     return render(request, "xbox.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
+
