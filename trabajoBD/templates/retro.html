@@ -42,22 +42,13 @@
     </div>
   </nav>
 
-
-  <!--
+    <!-- Barra Buscar  -->
     <div class="topbar row card3 col s4 m4 l4 center">
-      <form method="POST">{% csrf_token %}
-        <div class="">
-          <div class="input-field col s6 m2 l1 right">
-            <input class="btn-small" type="submit" value="Buscar">
-          </div>
-          <div class="input-field col s6 m2 l2 right">
-            <input placeholder="Buscar" id="buscar" type="text" class="validate white-text">
-          </div>
-        </div>
+      <form action="{% url 'buscar' %}" method="GET">
+          <input class="btn-small col s6 m2 l1 right center" type="submit" value="buscar">
+          <input placeholder="Buscar" id="buscar" type="text" class="validate white-text col s6 m2 l2 right center" name="txtBusqueda">
       </form>
     </div>
-  
--->
 
   <div class="carousel blue-grey darken-3">
     <h5 class="center white-text">Los Mejores Juegos</h5>

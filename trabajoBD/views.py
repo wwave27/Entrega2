@@ -13,6 +13,24 @@ def home(request):
 
     return render(request,"index.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
 
+def buscar(request):
+
+    if request.GET["txtBusqueda"] is not None and request.GET["txtBusqueda"].strip() !=' ':
+
+        busqueda = request.GET["txtBusqueda"]
+
+        noticiasCards = Noticia.objects.filter(titulo__icontains=busqueda)
+        reviewsCards = Reviews.objects.filter(titulo__icontains=busqueda)
+        lanzamientosCards = Lanzamientos.objects.filter(titulo__icontains=busqueda)
+
+        return render(request, "search.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards,"query":busqueda})
+    
+    else:
+        mensaje:"no se ingresó información"
+
+        return HttpResponse(mensaje)
+
+
 def register(request):
     return render(request, "register.html")
 

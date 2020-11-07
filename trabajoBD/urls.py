@@ -19,7 +19,8 @@ urlpatterns = [
     path('switch/', views.switchnews, name="switch"),
     path('pc/', views.pcnews, name="pc"),
     path('retro/', views.retronews, name="retro"),
-    path('xbox/', views.xboxnews, name="xbox"), 
+    path('xbox/', views.xboxnews, name="xbox"),
+    path('buscar/', views.buscar, name="buscar"),
 
 ]
 

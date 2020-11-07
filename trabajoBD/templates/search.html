@@ -17,7 +17,7 @@
   
 </head>
 <body class="grey darken-4">
-  <nav class="red darken-2" role="navigation">
+  <nav class="blue-grey lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img src="{% static 'img/logo nuevo.png' %}" alt="Logo" height="50" width="150"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{% url 'ps5' %}">PS5</a></li>
@@ -35,7 +35,7 @@
         <li><a href="{% url 'switch' %}">SWITCH</a></li>
         <li><a href="{% url 'pc' %}">PC</a></li>
         <li><a href="{% url 'retro' %}">RETRO</a></li>
-        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li>
+        <li><a href="{% url 'registrarse' %}">REGISTRARSE</a></li> 
         <li><a href="{% url 'login' %}">ENTRAR</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -44,12 +44,12 @@
 
     <!-- Barra Buscar  -->
     <div class="topbar row card3 col s4 m4 l4 center">
-      <form action="{% url 'buscar' %}" method="GET">
-          <input class="btn-small col s6 m2 l1 right center" type="submit" value="buscar">
-          <input placeholder="Buscar" id="buscar" type="text" class="validate white-text col s6 m2 l2 right center" name="txtBusqueda">
-      </form>
-   </div>
-
+        <form action="{% url 'buscar' %}" method="GET">
+            <input class="btn-small col s6 m2 l1 right center" type="submit" value="buscar">
+            <input placeholder="Buscar" id="buscar" type="text" class="validate white-text col s6 m2 l2 right center" name="txtBusqueda">
+        </form>
+    </div>
+  
   <div class="carousel blue-grey darken-3">
     <h5 class="center white-text">Los Mejores Juegos</h5>
     <a class="carousel-item" href="#one!"><img src="{% static 'img/carrusel/carrusel1.JPG' %}"></a>
@@ -74,16 +74,15 @@
             <h5 class="center">Noticias</h5>
             
             {% for Noticia in noticiasCards reversed %}
-              {% if Noticia.nintendo == True %}
-                <div class="card">
-                  <div class="card-image">
-                    <img src={{ Noticia.imagen.url }}>
-                    <span class="card-title sombra">{{Noticia.titulo}}</span>
-                  </div>
-                  <div class="card-content">
-                    <p>{{Noticia.subtitulo}}</p>
-                  </div>
-                  <!-- chips  -->
+            <div class="card">
+              <div class="card-image">
+                <img src={{ Noticia.imagen.url }}>
+                <span class="card-title sombra">{{Noticia.titulo}}</span>
+              </div>
+              <div class="card-content">
+                <p>{{Noticia.subtitulo}}</p>
+              </div>
+              <!-- chips  -->
               {% if Noticia.nintendo %}
               <div class="chip red" id="chipSwitch">
                 Nintendo Switch
@@ -104,11 +103,12 @@
                 Xbox
               </div>
               {% endif %}
-                  <div class="card-action">
-                    <a href="#">Leer Noticia</a>
-                  </div>
-                </div>
-                {% endif %}
+
+              <div class="card-action">
+                <a href="#">Leer Noticia</a>
+              </div>
+
+            </div>
             {% endfor %}
             
           </div>
@@ -120,39 +120,36 @@
             <h5 class="center">Lanzamientos</h5>
 
             {% for Lanzamientos in lanzamientosCards reversed %}
-              {% if Lanzamientos.nintendo == True %}
-                <div class="card">
-                  <div class="card-image">
-                    <img src={{ Lanzamientos.imagen.url }}>
-                    <span class="card-title sombra">{{Lanzamientos.titulo}}</span>
-                  </div>
-                  <div class="card-content">
-                    <p>{{Lanzamientos.subtitulo}}</p>
-                  </div>
-                      <!-- chips  -->
-                  {% if Lanzamientos.nintendo %}
-                  <div class="chip red" id="chipSwitch">
-                    Nintendo Switch
-                  </div>
-                  {% endif %}
-                  {% if Lanzamientos.playstation %}
-                  <div class="chip blue" id="chipPlaystation">
-                    Playstation
-                  </div>
-                  {% endif %}
-                  {% if Lanzamientos.pc %}
-                  <div class="chip orange" id="chipPc">
-                    PC
-                  </div>
-                  {% endif %}
-                  {% if Lanzamientos.xbox %}
-                  <div class="chip green" id="chipXbox">
-                    Xbox
-                  </div>
-                  {% endif %}
-
-                </div>
+            <div class="card">
+              <div class="card-image">
+                <img src={{ Lanzamientos.imagen.url }}>
+                <span class="card-title sombra">{{Lanzamientos.titulo}}</span>
+              </div>
+              <div class="card-content">
+                <p>{{Lanzamientos.subtitulo}}</p>
+              </div>
+              <!-- chips  -->
+              {% if Lanzamientos.nintendo %}
+              <div class="chip red" id="chipSwitch">
+                Nintendo Switch
+              </div>
               {% endif %}
+              {% if Lanzamientos.playstation %}
+              <div class="chip blue" id="chipPlaystation">
+                Playstation
+              </div>
+              {% endif %}
+              {% if Lanzamientos.pc %}
+              <div class="chip orange" id="chipPc">
+                PC
+              </div>
+              {% endif %}
+              {% if Lanzamientos.xbox %}
+              <div class="chip green" id="chipXbox">
+                Xbox
+              </div>
+              {% endif %}
+            </div>
             {% endfor %}
           </div>
         </div>
@@ -163,41 +160,39 @@
             <h5 class="center">Reviews</h5>
 
             {% for Reviews in reviewsCards reversed %}
-              {% if Reviews.nintendo == True %}
-                <div class="card">
-                  <div class="card-image">
-                    <img src={{ Reviews.imagen.url }}>
-                    <span class="card-title sombra">{{Reviews.titulo}}</span>
-                  </div>
-                  <div class="card-content">
-                    <p>{{Reviews.subtitulo}}</p>
-                  </div>
-                  <!-- chips  -->
-                  {% if Reviews.nintendo %}
-                  <div class="chip red" id="chipSwitch">
-                    Nintendo Switch
-                  </div>
-                  {% endif %}
-                  {% if Reviews.playstation %}
-                  <div class="chip blue" id="chipPlaystation">
-                    Playstation
-                  </div>
-                  {% endif %}
-                  {% if Reviews.pc %}
-                  <div class="chip orange" id="chipPc">
-                    PC
-                  </div>
-                  {% endif %}
-                  {% if Reviews.xbox %}
-                  <div class="chip green" id="chipXbox">
-                    Xbox
-                  </div>
-                  {% endif %}
-                  <div class="card-action">
-                    <a href="#">Leer Review</a>
-                  </div>
-                </div>
+            <div class="card">
+              <div class="card-image">
+                <img src={{ Reviews.imagen.url }}>
+                <span class="card-title sombra">{{Reviews.titulo}}</span>
+              </div>
+              <div class="card-content">
+                <p>{{Reviews.subtitulo}}</p>
+              </div>
+              <!-- chips  -->
+              {% if Reviews.nintendo %}
+              <div class="chip red" id="chipSwitch">
+                Nintendo Switch
+              </div>
               {% endif %}
+              {% if Reviews.playstation %}
+              <div class="chip blue" id="chipPlaystation">
+                Playstation
+              </div>
+              {% endif %}
+              {% if Reviews.pc %}
+              <div class="chip orange" id="chipPc">
+                PC
+              </div>
+              {% endif %}
+              {% if Reviews.xbox %}
+              <div class="chip green" id="chipXbox">
+                Xbox
+              </div>
+              {% endif %}
+              <div class="card-action">
+                <a href="#">Leer Review</a>
+              </div>
+            </div>
             {% endfor %}
           </div>
         </div>
