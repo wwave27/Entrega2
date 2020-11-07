@@ -47,13 +47,13 @@
 <div class="topbar row card3 col s4 m4 l4 center">
     <form method="POST">{% csrf_token %}
         <div class="input-field col s4 m2 l2">
-            <p><input placeholder="Usuario" <input type="text" name="username"></p>
+            <p><input class="white-text" placeholder="Usuario" type="text" name="username"></p>
         </div>
         <div class="input-field col s4 m2 l2">
-            <p> <input placeholder="Password"  <input type="password" name="password"></p>
+            <p> <input class="white-text" placeholder="Password"  type="password" name="password"></p>
         </div>
         <div class="input-field col s4 l1">
-            <p><a button class="btn-small" ><input type="submit" href="{% url 'index' %}"></a></p>
+            <p><input button class="btn-small" type="submit" href="{% url 'index' %}" value="Buscar"></a></p>
         </div>
     </form>
 </div>
