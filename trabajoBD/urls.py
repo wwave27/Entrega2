@@ -21,6 +21,8 @@ urlpatterns = [
     path('retro/', views.retronews, name="retro"),
     path('xbox/', views.xboxnews, name="xbox"),
     path('buscar/', views.buscar, name="buscar"),
+    path('logout/', views.buscar, name="logout"),
+
 
 ]
 
