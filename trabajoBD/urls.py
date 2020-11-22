@@ -12,6 +12,12 @@ from django.contrib.auth.views import LoginView,logout_then_login
 from django.urls import reverse, reverse_lazy
 from django.conf import settings
 
+from rest_framework import routers
+from .views import NoticiaViewSet
+
+router = routers.DefaultRouter()
+router.register('noticiaApi', NoticiaViewSet)
+
 urlpatterns = [
     path('index/', views.home, name="index"),
     path('registrarse/', views.register, name="registrarse"),
@@ -22,6 +28,7 @@ urlpatterns = [
     path('xbox/', views.xboxnews, name="xbox"),
     path('buscar/', views.buscar, name="buscar"),
     path('logout/', views.buscar, name="logout"),
+    path('api/', include(router.urls)),
 
 
 ]

@@ -4,6 +4,7 @@ from django.template.loader import get_template
 from django.shortcuts import render
 from trabajoBD.models import Usuario
 
+
 def mainPage(request):
     
     #doc_externo = loader.get_template("index.html")

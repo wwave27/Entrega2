@@ -30,6 +30,7 @@ urlpatterns = [
     path('accounts/login/',LoginView.as_view(template_name='logout.html'),name="logout"),   
     path('accounts/profile/',LoginView.as_view(template_name='index.html'),name="accounts/profile"),
     path('logout/',logout_then_login,name="logout"),
+    path('oauth/', include('social_django.urls', namespace='social')),
 ]
 
 

@@ -3,15 +3,29 @@ from trabajoBD.models import Noticia, Reviews, Lanzamientos
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 
+#Rest Framwork
+from rest_framework import viewsets
+from .serializer import NoticiaSerializer
+
+#Consumo API
+from urllib.request import urlopen
+import json
+
 # Create your views here.
 
 def home(request):
+
+    #Temperatura
+    url= "https://api.gael.cl/general/public/clima/SCQN"
+    datos = urlopen(url).read()
+    clima = json.loads(datos)
+    temperatura = clima["Temp"]
 
     noticiasCards = Noticia.objects.all()
     reviewsCards = Reviews.objects.all()
     lanzamientosCards = Lanzamientos.objects.all()
 
-    return render(request,"index.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
+    return render(request,"index.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards, "climaStgo":temperatura})
 
 def buscar(request):
 
@@ -75,3 +89,7 @@ def xboxnews(request):
   
     return render(request, "xbox.html",{"noticiasCards":noticiasCards,"reviewsCards":reviewsCards, "lanzamientosCards":lanzamientosCards})
 
+
+class NoticiaViewSet(viewsets.ModelViewSet):
+    queryset = Noticia.objects.all()
+    serializer_class = NoticiaSerializer
