@@ -93,3 +93,17 @@ def xboxnews(request):
 class NoticiaViewSet(viewsets.ModelViewSet):
     queryset = Noticia.objects.all()
     serializer_class = NoticiaSerializer
+
+#def password_reset(request):
+#    return render(request, 'password_reset.html')
+
+#def password_reset_done(request):
+#    return render(request, 'password_reset_done.html')
+
+
+#def password_reset_confirm(request):
+#    return render(request, 'password_reset_confirm.html')
+
+
+#def password_reset_complete(request):
+#    return render(request, 'password_reset_complete.html')

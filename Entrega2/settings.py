@@ -141,7 +141,8 @@ LOGIN_REDIRECT_UTL = reverse_lazy('index')
 
 LOGOUT_REDIRECT_URL = reverse_lazy('index')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
